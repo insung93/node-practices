@@ -48,12 +48,12 @@ npmjs.com npm registry에 패키지 배포하기
 2. 업로드
 [insung93-math]$ npm publish
     
- 1012  2021-07-09_14:19:50 [CMD]:git clone git://github.com/douzone-busan-bitacademy/node-practices.git
- 1014  2021-07-09_14:19:58 [CMD]:cd node-practices/
- 1017  2021-07-09_14:20:07 [CMD]:cd project-ex03
- 1019  2021-07-09_14:20:27 [CMD]:node app-ex01.js 
- 1021  2021-07-09_14:20:55 [CMD]:npm install
- 1022  2021-07-09_14:21:05 [CMD]:node app-ex01.js 
+[CMD]:git clone git://github.com/douzone-busan-bitacademy/node-practices.git
+[CMD]:cd node-practices/
+[CMD]:cd project-ex03
+[CMD]:node app-ex01.js 
+[CMD]:npm install
+[CMD]:node app-ex01.js 
 
 
 ===============================================================================
