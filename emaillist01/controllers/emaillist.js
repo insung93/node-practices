@@ -1,0 +1,18 @@
+const model = require("../models/emaillist");
+module.exports = {
+    index: async function (req, res, next) {
+        const results = await model.findAll();
+        console.log(results);
+        res.render("index", {
+            list : results || []
+        });
+    },
+    form: function (req, res) {
+        res.render("form");
+    },
+    add: async function (req, res) {
+        const result = await model.insert(req.body);
+        console.log(result);
+        res.redirect("/");
+    }
+}

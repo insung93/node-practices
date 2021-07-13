@@ -4,9 +4,8 @@ const path = require('path');
 
 
 // Router
-const mainRouter = require('./routes/main');
-const helloRouter = require('./routes/hello');
-const userRouter = require('./routes/user');
+const emaillistRouter = require('./routes/emaillist');
+
 const port = 8080;
 
 // Application Setup
@@ -27,9 +26,7 @@ const application = express()
         res.locals.res = res;
         next();
     })
-    .use('/', mainRouter)
-    .use('/hello', helloRouter)
-    .use('/user',userRouter)
+    .use('/', emaillistRouter)
 
 // Server Setup
 http.createServer(application)

@@ -67,6 +67,7 @@ app 03. based on (connect , serve-static)
 app 04. based on (connect , serve-static, connect-route )
     : npm package(module)
 
+===============================================================================
 helloweb-ex02 based on express
     :npm package(module)
 [helloweb-ex02] npm init -y
@@ -87,3 +88,27 @@ paackage.json 수정
 [helloweb-ex02] mkdir routes
 [helloweb-ex02] mkdir controllers
 [helloweb-ex02] mkdir models
+===============================================================================
+emaillist01 (model based mysql) - 기본 sql 기반
+emaillist02 (model based Sequelize) - ORM
+
+[emaillist01] npm init -y
+[emaillist01] npm i express
+[emaillist01] npm i ejs
+[emaillist01] npm i mysql
+[emaillist01] npm i -D nodemon
+
+paackage.json 수정
+  "scripts": {
+    "start" : "node index.js",
+    "debug" : "nodemon index.js"
+  }
+[emaillist01] npm start       (운용시)
+[emaillist01] npm run debug   ( 개발시... Live Update )
+
+[emaillist01] mkdir public
+[emaillist01] mkdir views
+[emaillist01] mkdir routes
+[emaillist01] mkdir controllers
+[emaillist01] mkdir models
+===============================
