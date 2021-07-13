@@ -30,11 +30,12 @@ module.exports = {
         console.log(conn);
     },
     insert: async function (emaillist) {
-        console.log(emaillist);
+        console.log(emaillist);                 // 객체
+        console.log(Object.values(emaillist));  // 배열
         const conn = dbconn();
         const query = util.promisify(conn.query).bind(conn);
         try {
-            const results = await query("insert into emaillist values(null,?,?,?)", [emaillist.fn,emaillist.ln,emaillist.email]);
+            const results = await query("insert into emaillist values(null,?,?,?)", Object.values(emaillist));
             return results;
         } catch (e) {
             console.error(e);
