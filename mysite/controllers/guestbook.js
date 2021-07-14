@@ -4,7 +4,7 @@ module.exports = {
         const sq = models.sequelize.Sequelize;
         const results = await models.Guestbook.findAll({
             attributes: ["no","name","message",
-            [sq.fn("date_format",sq.col("reg_date"),"%Y-%m-%d %h:%m:%s"),"regDate"]],
+            [sq.fn("date_format",sq.col("reg_date"),"%Y-%m-%d %H:%m:%s"),"regDate"]],
             order: [['no','DESC']]
     });
     console.log(results);
@@ -34,7 +34,6 @@ module.exports = {
             message: req.body.content,
             regDate: new Date()
         });
-        console.log(result);
         res.redirect("/guestbook");
     }
 }
