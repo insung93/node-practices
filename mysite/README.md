@@ -5,6 +5,9 @@
 ## 설치 패키지
 - $ npm i express
 - $ npm i ejs
+- $ npm i dotenv
+- $ npm i sequelize
+- $ npm i mysql2
 - $ npm i -D nodemon
 
 ## scripts in package.json
