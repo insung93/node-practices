@@ -90,7 +90,7 @@ paackage.json 수정
 [helloweb-ex02] mkdir models
 ===============================================================================
 emaillist01 (model based mysql) - 기본 sql 기반
-emaillist02 (model based Sequelize) - ORM
+
 
 [emaillist01] npm init -y
 [emaillist01] npm i express
@@ -138,3 +138,13 @@ package.json 스크립트 수정
 [guestbook01] mkdir public
 
 index.js 작성
+
+===============================================================================
+mysite (models based on Sequelize) ORM
+
+1. orm(Sequelize) -> JS test
+2. user(session, 인증, 접근제어), jQuery(ajax), Node API
+3. views -> include(ejs)
+4. dotenv(configuration : DB Connection Info, port, static directory)
+5. log(winston)
+6. fileupload(multer)
