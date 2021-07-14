@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mysite</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<%-include('../includes/header') %>
+		<div id="content">
+			<div id="guestbook">
+				<form action="/guestbook/add" method="post">
+					<table>
+						<tr>
+							<td>이름</td><td><input type="text" name="name"></td>
+							<td>비밀번호</td><td><input type="password" name="pass"></td>
+						</tr>
+						<tr>
+							<td colspan=4><textarea name="content" id="content"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
+						</tr>
+					</table>
+				</form>
+				<ul>
+					<li>
+						<%
+							for(let i = 0 ; i < guestbook.length ; i++) {
+								const vo = guestbook[i];
+						%>
+							<table style="margin-bottom: 20px;">
+								<tr>
+									<td style="width: 100px;">[<%=guestbook.length-i %>]</td>
+									<td style="width: 150px;"><%=vo.name %></td>
+									<td><%=vo.regDate %></td>
+									<td style="width: 30px; text-align: center;"><a href="/guestbook/delete/<%=vo.no%>">삭제</a></td>
+								</tr>
+								<tr>
+									<td colspan=4><%-vo.message.replaceAll("\n","<br/>") %>	</td>
+								</tr>
+							</table>
+						<%
+							}
+						%>
+						<br>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<%-include('../includes/navigation') %>
+		<%-include('../includes/footer') %>
+	</div>
+</body>
+</html>
