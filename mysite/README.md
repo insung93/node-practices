@@ -8,6 +8,9 @@
 - $ npm i dotenv
 - $ npm i sequelize
 - $ npm i mysql2
+- $ npm i momnet
+- $ npm i winston                   (logback)
+- $ npm i winston-daily-rotate-file (archive)
 - $ npm i -D nodemon
 
 ## scripts in package.json
@@ -26,6 +29,8 @@
     |--- package-lock.json
     |--- /node-modules
     |--- /config
+    |--- /logging
+    |--- /logs
     |--- /public
     |--- /routes
     |--- /controllers

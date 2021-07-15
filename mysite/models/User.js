@@ -43,3 +43,8 @@ module.exports = function(sequelize){
         tableName: 'user'
     });
 }
+
+
+
+
+

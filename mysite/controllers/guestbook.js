@@ -1,39 +1,42 @@
-const models = require("../models");
+const models = require('../models');
+const moment = require('moment');
+
 module.exports = {
-    index: async (req, res, next) => {
-        const sq = models.sequelize.Sequelize;
-        const results = await models.Guestbook.findAll({
-            attributes: ["no","name","message",
-            [sq.fn("date_format",sq.col("reg_date"),"%Y-%m-%d %H:%m:%s"),"regDate"]],
-            order: [['no','DESC']]
-    });
-    console.log(results);
-    res.render("guestbook/list",{guestbook : results || []});
+    index: async function(req, res, next) {
+        try { 
+            const results = await models.Guestbook.findAll({
+                attributes: ['no', 'name', 'message', 'regDate'],
+                order: [
+                    ['no', 'DESC']
+                ]
+            });
+            res.render('guestbook/index', {
+                guestbooks: results,
+                moment: moment
+            });
+        } catch(e) {
+            next(e);
+        }         
     },
-    deleteform: (req, res, next) => {
-        res.render("guestbook/deleteform",{
-            no : req.params.no || 0
-        });
+    delete: function(req, res) {
+        res.render('guestbook/delete');
     },
-    delete: async function (req, res, next) {
-        const results = await models.Guestbook.destroy({
-            where : {
-                no : req.body.no,
-                password : req.body.password
-            }
-        });
-        if(results==0) {
-            
-        }
-        res.redirect("/guestbook");
+    _delete: async function(req, res, next) {
+        try { 
+            await models.Guestbook.destroy({
+                where: req.body
+            });
+            res.redirect('/guestbook');
+        } catch(e) {
+            next(e);
+        }   
     },
-    add: async function (req, res, next) {
-        const result = await models.Guestbook.create({
-            name: req.body.name,
-            password: req.body.pass,
-            message: req.body.content,
-            regDate: new Date()
-        });
-        res.redirect("/guestbook");
+    add: async function(req, res, next) {
+        try {        
+            await models.Guestbook.create(req.body);
+            res.redirect('/guestbook');
+        } catch(e) {
+            next(e);
+        }        
     }
 }
