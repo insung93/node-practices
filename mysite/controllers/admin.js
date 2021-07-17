@@ -1,8 +1,15 @@
 const models = require('../models');
 
 module.exports = {
-    main: function(req, res) {
-        res.render('admin/main');
-    },
-    
+    index: async function (req, res) {
+        try {
+            const site = await models.Site.findOne({
+                attributes: ['title', 'welcome', 'profile', 'description']
+            });
+            res.render('admin/main', { site });
+        } catch (e) {
+            next(e);
+        }
+    }
+
 }
