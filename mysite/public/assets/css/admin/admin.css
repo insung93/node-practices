@@ -23,7 +23,7 @@ div#navigation				{ background-color:#45ee00 }
 div#navigation ul			{ width:138px; margin-top:1px }
 div#navigation li			{ width:138px; background-color:#E9E9E9; border:1px solid #DADADA; margin-top:-1px }
 div#navigation li a			{ display:block; color:#4F4F4F; width:98px; font-weight:bold; padding:10px 20px; font-size:1.1em }
-div#navigation li.selected	{ background:#E0E0E0 }
+div#navigation li.selected	{ background:#949494 }
 div#navigation li a:link	{ color:#4F4F4F; text-decoration:none; }
 div#navigation li a:hover	{ color:#4F4F4F; text-decoration:none; }
 div#navigation li a:visited	{ color:#4F4F4F; text-decoration:none; }

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "admin.css";
+@import "./admin.css";
 
 #site-form label,
 #site-form input, 
