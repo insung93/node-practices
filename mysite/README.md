@@ -12,6 +12,9 @@
 - $ npm i momnet
 - $ npm i winston                   (logback)
 - $ npm i winston-daily-rotate-file (archive)
+
+- $ npm i -D nodemon
+- $ npm i -D chai
 - $ npm i -D nodemon
 
 ## scripts in package.json
