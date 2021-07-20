@@ -1,14 +1,17 @@
 const dotenv = require('dotenv');
 const path = require('path');
 const assert = require('assert').strict;
-dotenv.config({path:path.join(path.resolve(__dirname,'..'), 'config/db.env')});
 
-describe('Model User', function() {
+dotenv.config({path: path.join(path.resolve(__dirname, '..'), 'config/db.env')})
+
+describe('Model User', function(){
     let models = null;
-    before(async function() {
+
+    before(async function(){
         models = require('../models');
     });
-    it('Test!!!!!', async function() {
+    
+    it('Fetch User(no=1)', async function(){
         const user = await models.User.findOne({
             where: {
                 no: 1
@@ -16,8 +19,7 @@ describe('Model User', function() {
         });
         assert.equal(user.no, 1);
     });
-    after(async function(){
-        console.log();
-    });
-});
 
+    after(async function(){
+    });
+})

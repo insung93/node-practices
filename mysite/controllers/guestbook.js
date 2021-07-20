@@ -1,6 +1,5 @@
 const models = require('../models');
 const moment = require('moment');
-const { render } = require('ejs');
 
 module.exports = {
     index: async function(req, res, next) {
@@ -15,9 +14,12 @@ module.exports = {
                 guestbooks: results,
                 moment: moment
             });
-        } catch(e) {
+        } catch(e) { 
             next(e);
         }         
+    },
+    spalanding: function(req, res, next){
+        res.render('guestbook/spa-landing');
     },
     delete: function(req, res) {
         res.render('guestbook/delete');
@@ -39,8 +41,5 @@ module.exports = {
         } catch(e) {
             next(e);
         }        
-    },
-    spa: function(req,res) {
-        res.render('guestbook/spa-landing')
     }
 }

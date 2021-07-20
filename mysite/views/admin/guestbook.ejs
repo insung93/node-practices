@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="container">
-		<%-include('./include/header') %>
+		<%-include('./includes/header') %>
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-form">
@@ -16,7 +16,7 @@
 
 				</div>
 			</div>
-			<%-include('./include/navigation') %>
+			<%-include('./includes/navigation', {menu: 'guestbook'}) %>
             <%-include('../includes/footer') %>
 		</div>
 	</div>

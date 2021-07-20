@@ -1,15 +1,15 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 module.exports = function(sequelize) {
-    return sequelize.define('Site', {
-        title: { 
+    const SiteModule = sequelize.define('Site', {
+        title: {
             field: 'title',
             type: DataTypes.STRING(50),
-            primaryKey: true
+            allowNull: false
         },
         welcome: {
             field: 'welcome',
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING(200),
             allowNull: false
         },
         profile: {
@@ -21,7 +21,7 @@ module.exports = function(sequelize) {
             field: 'description',
             type: DataTypes.TEXT,
             allowNull: false
-        }
+        },
     }, {
         underscored: true,    
         freezeTableName: true,
@@ -30,4 +30,7 @@ module.exports = function(sequelize) {
         updatedAt: false,
         tableName: 'site'
     });
+    
+    SiteModule.removeAttribute('id');
+    return SiteModule;
 }

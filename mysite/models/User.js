@@ -1,16 +1,16 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
-module.exports = function(sequelize){
+module.exports = function(sequelize) {
     return sequelize.define('User', {
-        no: {
+        no: { 
             field: 'no',
             type: DataTypes.BIGINT(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true 
         },
         name: {
             field: 'name',
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         email: {
@@ -20,7 +20,7 @@ module.exports = function(sequelize){
         },
         password: {
             field: 'password',
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING(200),
             allowNull: false
         },
         gender: {
@@ -30,12 +30,12 @@ module.exports = function(sequelize){
         },
         role: {
             field: 'role',
-            type: DataTypes.ENUM(['USER', 'ADMIN']),
-            allowNull: true,
-            defaultValue: 'USER'
+            type: DataTypes.DATE,
+            type: DataTypes.ENUM(['ADMIN', 'USER']),
+            defaultValue: "USER" 
         }
     }, {
-        underscored: true,
+        underscored: true,    
         freezeTableName: true,
         timestamps: true,
         createdAt: false,
@@ -43,8 +43,3 @@ module.exports = function(sequelize){
         tableName: 'user'
     });
 }
-
-
-
-
-

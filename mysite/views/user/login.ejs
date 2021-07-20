@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>mysite</title>
@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="container">
-		<%- include('../includes/header') %>
+		<%-include('../includes/header')%>
 		<div id="content">
 			<div id="user">
 				<form id="login-form" name="loginform" method="post" action="/user/login">
@@ -17,15 +17,15 @@
 					<input name="password" type="password" value="">
 					<% if(locals.result && result === 'fail') { %>
 					<p>
-						로그인이 실패 했습니다.
+							로그인이 실패 했습니다.
 					</p>
 					<% } %>
 					<input type="submit" value="로그인">
 				</form>
 			</div>
 		</div>
-		<%- include('../includes/navigation') %>
-		<%- include('../includes/footer') %>
+		<%-include('../includes/navigation') %>
+		<%-include('../includes/footer') %>
 	</div>
 </body>
 </html>

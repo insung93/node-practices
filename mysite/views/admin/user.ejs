@@ -7,16 +7,14 @@
 </head>
 <body>
 	<div id="container">
-		<%-include('./include/header') %>
+		<%-include('./includes/header') %>
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-form">
-					
 					<h2>사용자 관리 페이지</h2>				
-
 				</div>
 			</div>
-			<%-include('./include/navigation') %>
+			<%-include('./includes/navigation', {menu: 'user'}) %>
             <%-include('../includes/footer') %>
 		</div>
 	</div>
