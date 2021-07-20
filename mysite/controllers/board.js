@@ -1,9 +1,21 @@
 const models = require('../models');
 const moment = require('moment');
-const sequelize = require('sequelize');
 
 module.exports = {
     index: async function (req, res, next) {
+        const totalcount = await models.Board.count();
+        const currentPage = req.params.currentPage || 1 ;
+        const limit = 5;
+        const totalPages = Math.ceil(totalcount/limit);
+
+
+
+        const minPages = 0;
+        const maxPages = 0;
+        
+        const offset = (currentPage - 1) * 5;
+        
+
         const board = await models.Board.findAll({
             include: {
                 model: models.User,
@@ -12,7 +24,12 @@ module.exports = {
             order: [
                 ['no', 'desc']
             ],
+            offset : offset,
+            limit : limit
         })
+        const pageInfo = {
+            
+        }
         res.render('board/list', { board, moment });
     },
     view: async function (req, res, next) {
