@@ -30,6 +30,7 @@ module.exports = {
         const pageInfo = {
             
         }
+        req.session.authUser==board
         res.render('board/list', { board, moment });
     },
     view: async function (req, res, next) {
