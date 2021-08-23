@@ -1,7 +1,8 @@
-const express = require('express')
-const mainRouter = express.Router();
-mainRouter.route("").get(function(req, res) {
-    res.render("main/index")
+const express = require('express');
+
+const router = express.Router();
+router.route("").get(function(req, res){
+    res.render('main/index');
 });
 
-module.exports = mainRouter;
+module.exports = router;
